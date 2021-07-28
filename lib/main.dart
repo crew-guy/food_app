@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/category_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,11 +10,27 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Deli Meals',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(),
+          primarySwatch: Colors.pink,
+          accentColor: Colors.amber,
+          canvasColor: Color.fromRGBO(255, 254, 229, 1),
+          fontFamily: 'OpenSans',
+          textTheme: ThemeData.light().textTheme.copyWith(
+                body1: TextStyle(
+                  color: Color.fromRGBO(20, 51, 51, 1),
+                ),
+                body2: TextStyle(
+                  color: Color.fromRGBO(20, 51, 51, 1),
+                ),
+                title: TextStyle(
+                  color: Color.fromRGBO(20, 51, 51, 1),
+                  fontSize: 24,
+                  fontWeight: FontWeight.w700,
+                  fontFamily: 'OpenSans',
+                ),
+              )),
+      home: CategoryScreen(),
     );
   }
 }
@@ -23,11 +40,15 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
+      appBar: AppBar(title: Text('Khaana khujana')),
+      body: Container(
         width: double.infinity,
         height: double.infinity,
         child: Center(
           child: Text('hello world'),
-        ));
+        ),
+      ),
+    );
   }
 }
