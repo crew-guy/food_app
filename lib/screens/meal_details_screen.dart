@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:food_app/data/dummy_data.dart';
 
 class MealDetailsScreen extends StatelessWidget {
-  const MealDetailsScreen({Key? key}) : super(key: key);
   static const String routeName = "/meal-details";
+  final Function toggleFavourite;
+  final Function isMealFavourite;
 
+  MealDetailsScreen(this.toggleFavourite, this.isMealFavourite);
   Widget buildSectionTitle(BuildContext context, String text) {
     return Padding(
         padding: const EdgeInsets.symmetric(
@@ -101,9 +103,10 @@ class MealDetailsScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.delete),
+        child: Icon(selectedMeal.isFavourite ? Icons.star : Icons.star_border),
         backgroundColor: Theme.of(context).accentColor,
         onPressed: () {
+          toggleFavourite(selectedMeal.id);
           Navigator.of(context).pop(mealId);
         },
       ),
