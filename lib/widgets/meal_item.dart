@@ -9,7 +9,7 @@ class MealItem extends StatelessWidget {
   final String title;
   final String imgUrl;
   final String id;
-  final Function removeItem;
+  // final Function removeItem;
 
   const MealItem({
     required this.id,
@@ -18,7 +18,7 @@ class MealItem extends StatelessWidget {
     required this.complexity,
     required this.title,
     required this.imgUrl,
-    required this.removeItem,
+    // required this.removeItem,
   });
 
   String get getComplexity {
@@ -53,7 +53,7 @@ class MealItem extends StatelessWidget {
     )
         .then((result) {
       if (result != null) {
-        removeItem(result);
+        // removeItem(result);
       }
     });
   }

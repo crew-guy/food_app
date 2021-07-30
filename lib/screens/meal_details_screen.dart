@@ -9,13 +9,14 @@ class MealDetailsScreen extends StatelessWidget {
   MealDetailsScreen(this.toggleFavourite, this.isMealFavourite);
   Widget buildSectionTitle(BuildContext context, String text) {
     return Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 10.0,
-        ),
-        child: Text(
-          text,
-          style: Theme.of(context).textTheme.title,
-        ));
+      padding: const EdgeInsets.symmetric(
+        vertical: 10.0,
+      ),
+      child: Text(
+        text,
+        style: Theme.of(context).textTheme.title,
+      ),
+    );
   }
 
   Widget buildSectionContainer(BuildContext context, Widget child) {
@@ -108,7 +109,7 @@ class MealDetailsScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).accentColor,
         onPressed: () {
           toggleFavourite(selectedMeal.id);
-          Navigator.of(context).pop(mealId);
+          // Navigator.of(context).pop(mealId);
         },
       ),
     );
