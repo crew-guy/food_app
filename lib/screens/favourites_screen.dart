@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/models/meal.dart';
 
 class FavouritesScreen extends StatelessWidget {
-  const FavouritesScreen({Key? key}) : super(key: key);
+  List<Meal> favouriteMeals;
+
+  FavouritesScreen(this.favouriteMeals);
 
   @override
   Widget build(BuildContext context) {
